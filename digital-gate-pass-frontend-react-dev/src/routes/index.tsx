@@ -1,3 +1,4 @@
+// index.tsx src ke under root route hai, jiska matlab hai ki ye component app ke har page par render hoga. Isme hum global providers jaise ki AuthProvider, QueryClientProvider, aur Toaster ko wrap karte hain, taaki ye sabhi pages par available ho. Iske alawa, hum ek NotFoundComponent bhi define karte hain jo 404 errors ke liye dikhaya jayega, aur ek ErrorComponent jo kisi bhi unexpected error ke liye dikhaya jayega.
 import { createFileRoute, Link, Navigate } from "@tanstack/react-router";
 import { useAuth, defaultRouteForUser } from "@/lib/auth";
 import { ShieldCheck, ScanLine, Users, ArrowRight } from "lucide-react";
@@ -26,7 +27,7 @@ function Index() {
         </div>
         <div className="flex gap-2">
           <Button asChild variant="ghost">
-            <Link to="/auth">Sign in</Link>
+            <Link to="/auth" search={{ tab: "login" }}>Sign in</Link>
           </Button>
           <Button asChild>
             <Link to="/auth" search={{ tab: "register" }}>
@@ -60,7 +61,7 @@ function Index() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/auth">Sign in</Link>
+                <Link to="/auth" search={{ tab: "login" }}>Sign in</Link>
               </Button>
             </div>
           </div>
