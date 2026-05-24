@@ -1,8 +1,8 @@
+import React, { useState } from "react";
 import { createFileRoute, useNavigate, Navigate } from "@tanstack/react-router";
 import { useAuth, defaultRouteForUser } from "@/lib/auth";
 import type { RegisterPayload } from "@/lib/auth";
 import type { Role } from "@/lib/types";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -271,9 +271,7 @@ function RegisterForm({ onDone }: { onDone: () => void }) {
 
           {/* Student Mobile */}
           <div>
-            <Label className="text-xs text-muted-foreground">
-              Student Mobile 
-            </Label>
+            <Label className="text-xs text-muted-foreground">Student Mobile</Label>
             <Input
               required
               type="tel"
@@ -294,9 +292,7 @@ function RegisterForm({ onDone }: { onDone: () => void }) {
 
           {/* Parent Mobile */}
           <div>
-            <Label className="text-xs text-muted-foreground">
-              Parent / Guardian Mobile 
-            </Label>
+            <Label className="text-xs text-muted-foreground">Parent / Guardian Mobile</Label>
             <Input
               required
               type="tel"

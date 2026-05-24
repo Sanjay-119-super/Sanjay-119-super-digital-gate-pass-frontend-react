@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   const { user, loading } = useAuth();
   if (loading) return null;
-  if (user) return <Navigate to={defaultRouteForUser(user)} />;
+  if (user) return <Navigate to={defaultRouteForUser(user)} replace />;
 
   return (
     <div className="min-h-screen">
